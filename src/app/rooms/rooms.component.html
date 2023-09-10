@@ -1,0 +1,47 @@
+<p>rooms works!</p>
+
+<div [hidden]="hiderooms">
+
+    hiiiiiiiiiiiiiiii theere
+</div>
+
+<div *ngIf="rooms.availableroom">
+Room List from object 
+<div *ngIf="!hiderooms">
+
+  <h1>roooms are</h1>
+  
+  <table border="4">
+    <tr>
+      <th>Index</th>
+      <th>Even/odd</th>
+      <th>Room number</th>
+      <th>Room type</th>
+      <th>Amenities</th>
+      <th>Price</th>
+      <th>Photo</th>
+      <th>Check In Time</th>
+      <th>Check Out Time</th>
+      <th>Signature</th>
+    </tr>
+    <tr *ngFor="let room of roomlist;let e=even ;let o=odd; let i=index;" >
+      <td>{{i}}</td>
+      <td>{{ e ?"Even": "odd"}}</td>
+      <td>{{room.roomno}}</td>
+      <td>{{room.rootype}}</td>
+      <td>{{room.amenities}}</td>
+      <td>{{room.price}}Rs</td>
+      <td><img src="{{room.photo}}" alt="" width="250px" height="100px"></td>
+      <td>{{room.checkintime}}</td>
+      <td>{{room.checkouttime}}</td>
+      <td>{{room.Signature}}</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+
+<div *ngIf="!hiderooms" >
+    Rooms List:availabe rooms {{rooms.totalrooms}}
+  </div>
+<h1 (click)="Toggle()" >Toggle</h1>

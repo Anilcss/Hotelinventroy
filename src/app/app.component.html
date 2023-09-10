@@ -1,0 +1,12 @@
+<h1>Hiiiiiiiiiiii</h1>
+<h1>{{person}}</h1>
+<button (click)="changerole()">Switchrole</button>
+<div [ngSwitch]="person">
+<div *ngSwitchCase="'user'">
+    Welcome User
+</div>
+<div *ngSwitchCase="'admin'">
+    <app-rooms ></app-rooms>
+</div>
+
+</div>
